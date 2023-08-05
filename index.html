@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <style>
+        .fa-heart-o:before {
+            content: "\f08a";
+        }
+        .fa-heart:before {
+            content: "\f004";
+        }
+        /* По идее, эти стили должны быть прописанны на странице */
+    </style>
+</head>
+<body>
+    <i class="fa fa-heart-o"  id="faHeart"></i>
+    <script>
+        const likeButton = document.getElementById('faHeart');
+        let isLiked = true;
+
+        likeButton.onclick = function() {
+        if (isLiked) {
+            likeButton.classList.remove('fa-heart-o');
+            likeButton.classList.add('fa-heart');
+            isLiked = false;
+        } else {
+            likeButton.classList.remove('fa-heart');
+            likeButton.classList.add('fa-heart-o');
+            isLiked = true;
+        }
+        };
+    </script>
+</body>
+</html>
